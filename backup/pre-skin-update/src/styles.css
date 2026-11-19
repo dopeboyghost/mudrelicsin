@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cinzel", "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --radius: 0px;
+  --color-ink: #0d0e0c;
+  --color-bg: #0d0e0c;
+  --color-surface: #171813;
+  --color-parchment: #d9c9a5;
+  --color-fg: #d9c9a5;
+  --color-gold: #b69a5b;
+  --color-muted: #c4b48a;
+  --color-forest: #27372b;
+  --color-blood: #542628;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes relic-float {
+  0%,
+  to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.relic-float {
+  animation: 5.5s ease-in-out infinite relic-float;
+}
+
+.gold-plate {
+  color: #2a0c12;
+  background-color: #c6a04a;
+  background-image: url(/header-gold.jpg);
+  background-position: 50% 42%;
+  background-size: cover;
+  border-bottom: 3px solid #4a101c;
+}
+
+.wing-nav {
+  z-index: 15;
+  position: sticky;
+  top: 4.25rem;
+}
+
+.archive-anchor {
+  scroll-margin-top: 8rem;
+}
+
+@media (width >= 640px) {
+  .wing-nav {
+    top: 5.4rem;
+  }
+  .archive-anchor {
+    scroll-margin-top: 9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .relic-float {
+    animation: none;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "MUD RELICS",
+      "hasCanvas": false,
+      "bodyTextLen": 226,
+      "bodyTextHash": "809f96ab10e295fc505791093683083cb5399042734d4e390bdd874a031eb1ed",
+      "bodyTextPrefix": "MUD RELICS ARCHIVE CART MUD RELICS YOU DIDN’T BUY IT. YOU FOUND ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "MUD RELICS",
+      "hasCanvas": false,
+      "bodyTextLen": 218,
+      "bodyTextHash": "cad0d4e42b53f92550e6c791050dd158300fe83f70a12f5ab2c73e46462c8a1a",
+      "bodyTextPrefix": "MUD RELICS MENU MUD RELICS YOU DIDN’T BUY IT. YOU FOUND IT. ENTE",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

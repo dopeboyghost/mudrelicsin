@@ -1,0 +1,45 @@
+MUD RELICS — CATALOGUE PHOTO + 360° VIEWER UPDATE
+
+Update the existing MUD RELICS website using the real product photographs I upload, including multiple angles of each artifact.
+
+STRICT RULE: Do not redesign, rebuild, restyle, or restructure the website. Preserve the current layout, branding, colours, typography, navigation, catalogue cards, product pages, links, pricing, and all existing functionality. Make only the smallest changes needed for product images and the viewer. Back up the project first.
+
+IMAGE ORGANISATION
+- Group uploaded photos by the correct artifact.
+- Use clear filenames and organise them in separate folders per product.
+- Identify front, side, back, top, and detail shots where possible.
+- Do not mix photos from different products or guess uncertain matches. Report unmatched images.
+- Use the real photos only. Do not generate, redraw, retouch, or invent product details or missing angles.
+- Keep one approved front-facing image as each product's main catalogue thumbnail.
+
+360° VIEWER
+- For products with multiple rotational views, add a lightweight image-sequence viewer in the existing product image area.
+- Desktop: click and drag horizontally to rotate.
+- Mobile: swipe horizontally to rotate.
+- Use the uploaded images in their actual rotational order. Do not fabricate intermediate views or claim a complete 360° view when coverage is partial.
+- Show a subtle instruction such as “DRAG TO INSPECT”.
+- Preload nearby frames, lazy-load other products, preserve aspect ratio, and provide a static-image fallback.
+- Keep top and detail close-ups as separate gallery images, not rotational frames.
+- Products with only one image must retain their normal static image display.
+- Keep the viewer visually minimal and consistent with the existing MUD RELICS design. Do not add unnecessary controls or new page sections.
+
+TECHNICAL LIMITS
+- Reuse the current framework, product data structure, and components wherever possible.
+- Add only an optional image-frame/gallery field where needed.
+- Do not change product names, artifact numbers, descriptions, lore, materials, prices, categories, stock, or any other metadata. I will provide specimen cards in a separate update.
+- Do not add unnecessary dependencies or remove existing assets.
+- Ensure horizontal interaction does not interfere with normal vertical page scrolling.
+
+VERIFY BEFORE FINISHING
+1. Check product-to-photo matching and frame order.
+2. Test rotation in both directions on desktop and mobile.
+3. Check partial-view and single-image fallbacks.
+4. Confirm the existing website design and product information remain unchanged.
+5. Run the build and fix errors caused by this update.
+
+STOP after the image update and viewer implementation. Do not publish or deploy anything.
+
+FINAL REPORT
+List the artifacts updated, number of photos per artifact, complete/partial rotational coverage, unmatched photos, files changed, and build status.
+
+GOAL: THE SAME WEBSITE, WITH REAL PRODUCT PHOTOGRAPHS AND A SIMPLE INTERACTIVE ROTATION VIEWER.

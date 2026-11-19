@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cinzel", "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --radius: 0px;
+  --color-ink: #000000;
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-parchment: #f3efe4;
+  --color-fg: #ececec;
+  --color-gold: #55e8ff;
+  --color-muted: #b8b8b8;
+  --color-forest: #2a2a2a;
+  --color-blood: #111111;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background-color: #000000;
+    background-image: none;
+    color: #ececec;
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes relic-float {
+  0%,
+  to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.relic-float {
+  animation: 5.5s ease-in-out infinite relic-float;
+}
+
+.gold-plate {
+  color: #0a0612;
+  background-color: #6a2ad4;
+  background-image: url(/textures/swirl.jpg);
+  background-position: 18% 28%;
+  background-size: cover;
+  border-bottom: 3px solid #67f3ff;
+}
+
+.gold-plate img {
+  filter: brightness(0) drop-shadow(0 0 5px rgba(90, 245, 255, 0.9));
+}
+
+.gold-plate img.brand-mark,
+.brand-mark {
+  filter: none;
+}
+
+.cart-link {
+  color: #ffffff;
+  background-color: rgba(8, 2, 22, 0.78);
+  box-shadow: 0 0 0 0.45rem rgba(8, 2, 22, 0.78);
+}
+
+.cart-link:hover {
+  color: #55e8ff;
+}
+
+.archive-field {
+  background: #000000;
+  color: #ececec;
+}
+
+.on-swirl {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.font-mono.tracking-widest.text-gold:not(button) {
+  color: #ffffff;
+}
+
+button.text-gold {
+  color: #55e8ff;
+}
+
+button.text-gold:hover,
+.wing-nav a:hover,
+a.border-gold:hover {
+  color: #55e8ff;
+}
+
+.bg-blood,
+.bg-blood.text-parchment {
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px #55e8ff;
+}
+
+.bg-blood:hover {
+  background-color: #55e8ff;
+  color: #07060e;
+}
+
+a.border-gold:hover {
+  background-color: #55e8ff;
+  color: #07060e;
+}
+
+.archive-hero .text-parchment {
+  color: #f2e9ff;
+  text-shadow: 0 2px 18px rgba(8, 0, 24, 0.85);
+}
+
+.hero-scrim {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.62));
+}
+
+.wing-nav {
+  z-index: 15;
+  position: sticky;
+  top: 4.25rem;
+  background: #000000;
+  color: #ffffff;
+  border-color: #55e8ff;
+}
+
+.wing-nav.text-gold {
+  color: #ffffff;
+}
+
+#dispatch {
+  background-color: #000000;
+  background-image: none;
+}
+
+.archive-anchor {
+  scroll-margin-top: 8rem;
+}
+
+@media (width >= 640px) {
+  .wing-nav {
+    top: 5.4rem;
+  }
+  .archive-anchor {
+    scroll-margin-top: 9rem;
+  }
+}
+
+.archive-radio {
+  width: min(22rem, 100%);
+  background: #000000;
+  color: #f3efe4;
+  border: 1px solid #2a2a2a;
+  padding: 0.7rem 0.75rem 0.55rem;
+}
+
+.archive-radio input[type="range"] {
+  accent-color: #55e8ff;
+  width: 100%;
+  height: 1.1rem;
+}
+
+.radio-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+}
+
+.radio-bars span {
+  display: block;
+  width: 2px;
+  height: 3px;
+  background: #55e8ff;
+  transform-origin: bottom;
+}
+
+.radio-bars.is-on span {
+  animation: radio-bar 0.75s ease-in-out infinite alternate;
+}
+
+.radio-bars.is-on span:nth-child(2) { animation-delay: 0.12s; }
+.radio-bars.is-on span:nth-child(3) { animation-delay: 0.24s; }
+.radio-bars.is-on span:nth-child(4) { animation-delay: 0.08s; }
+.radio-bars.is-on span:nth-child(5) { animation-delay: 0.2s; }
+
+@keyframes radio-bar {
+  from { height: 3px; }
+  to { height: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .relic-float,
+  .nozzle-flame,
+  .radio-bars span {
+    animation: none;
+  }
+}
+
+.nozzle-flame {
+  position: absolute;
+  z-index: 2;
+  width: 11px;
+  height: 30px;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  border-radius: 46% 46% 50% 50% / 62% 62% 42% 42%;
+  background: linear-gradient(
+    to top,
+    #3ec6ff 0 18%,
+    #ffe14a 46%,
+    #ff8a1e 70%,
+    rgba(255, 90, 0, 0) 100%
+  );
+  transform-origin: 50% 100%;
+  animation: flame-flicker 110ms steps(2) infinite;
+}
+
+@keyframes flame-flicker {
+  0% {
+    transform: translate(-50%, -100%) scale(0.94, 1);
+  }
+  100% {
+    transform: translate(-50%, -100%) scale(1.06, 0.9);
+  }
+}

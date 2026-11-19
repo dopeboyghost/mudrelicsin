@@ -1,0 +1,10 @@
+- Paru (girlfriend) main IG: @not_psd — 1,679 followers, Model/Digital Artist, Kerala. Modelling: @psd__p02, Art: @ohrul82._, Behance: behance.net/psd_p02 [2026-08-26]
+- Dopeboyghost IG @dopeboyghost_: 11K followers, 112 posts, 248 following. Bio: 300+ songs from the underground | Architect of @cyphercypherclan | Freestyles • Music • Lore [2026-08-26]
+- Cyphercypherclan: ~6K claimed [2026-08-26]
+- CBL = CYPHERCYPHER Battle League. Ghosty ran it with ₹10K prize money and a custom championship belt. First champion is DHB. [2026-09-17]
+- Bluorng contact: Kai via IG business chat. 28 Aug 2026 said night-film idea is a proper fit; send pitch + night film to contact@bluorng.com. Status REPLIED. No battle pitch to Bluorng. [2026-08-28]
+- Urban Monkey: IG replied 28 Aug, dropped number, said they read the CBL/belt pitch, agreed to call 29 Aug 2026. Do not quote rate on first call. Range internally ₹20K–₹50K + product. [2026-08-28]
+- Ghosty (user) building CYPHERCYPHER: independent hip-hop/culture platform + movement, Kochi/Kerala → India. [2026-08-27]
+- Object line name lock: MUD RELICS. Stamp MR. Motto working: from the dust to the dust regal. [2026-09-02]
+- MUD RELICS complete source export 18 Nov 2026: artifacts/MUD_RELICS_COMPLETE_WEBSITE_EXPORT.zip and folder artifacts/mud-relics-complete/. Real stack is TanStack Start + React 19 + Vite + Tailwind v4, not Next.js. 28 relics, real photographs, radio MP3s, local cart. Auth off. [2026-11-18]
+- MUD RELICS homepage wings (18 Nov 2026): FLAME (lighter cases + lighter-and-ashtray combos 001–004), CATCHALLS (We Are Venom ashtray, Eye Void ring dish), VESSELS (Sunken Portrait, Strange Gentleman), SMOKE RITUALS (Crimson Nirvana), DISPLAY RELICS (Abyssal Tendrils stand), WEARABLES (none yet, no placeholders). Nav under the hero. Product data unchanged.

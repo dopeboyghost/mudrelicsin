@@ -1,0 +1,150 @@
+MUD RELICS — COMPLETE WEBSITE EXPORT & PORTABILITY
+
+You are working on the existing MUD RELICS website. I need you to extract and package the COMPLETE CURRENT WEBSITE PROJECT into a downloadable ZIP archive.
+
+PRIMARY OBJECTIVE
+
+Create a fully transferable, self-contained project that I can take outside Grok and continue developing using another AI coding platform, local development environment, GitHub, or hosting provider.
+
+This is an EXPORT TASK. Do not redesign, rebuild, simplify, or modify the website's existing appearance or functionality.
+
+1. EXPORT THE COMPLETE SOURCE CODE
+
+Include everything required to recreate the current website:
+
+- Complete Next.js application source code.
+- All pages, routes and layouts.
+- All React components.
+- All styling, CSS, Tailwind configuration and fonts.
+- All JavaScript and TypeScript files.
+- All product catalogue and product data.
+- All product descriptions, names, prices and archive information.
+- All images, product photographs, logos and visual assets.
+- All background textures, icons, animations and videos.
+- All audio files and ARCHIVE RADIO functionality, if implemented.
+- All interactive features, including product viewers, navigation, cart and buttons.
+- All configuration files and dependencies.
+- All public assets and supporting files.
+
+Preserve the current website exactly as it exists.
+
+2. PRESERVE THE MUD RELICS IDENTITY
+
+Do not change the existing design.
+
+Preserve:
+- MUD RELICS branding and official logo.
+- Purple/violet/electric-cyan visual treatment in the header.
+- Black background throughout the rest of the website.
+- Ivory/off-white headings and readable body text.
+- Existing product photography and product layouts.
+- Existing archive and specimen terminology.
+- All current product information and pricing.
+- Mobile and desktop responsiveness.
+- All current website functionality.
+
+Do not replace real product photographs with AI-generated images or placeholders.
+
+3. INCLUDE EVERYTHING NEEDED TO RUN IT
+
+The ZIP must contain:
+
+- package.json
+- package-lock.json (generate if missing)
+- Next.js configuration
+- TypeScript configuration, if used
+- Tailwind and PostCSS configuration, if used
+- All required environment-variable documentation
+- README.md
+- Complete source and public directories
+
+Do not include node_modules or unnecessary build caches.
+
+If dependencies are missing, identify them and document the exact installation process.
+
+4. HANDLE API KEYS AND PRIVATE INFORMATION SAFELY
+
+Do not expose or package:
+- API keys
+- Private access tokens
+- Passwords
+- Database credentials
+- Private environment variables
+- Personal account credentials
+
+Create a .env.example file listing the required environment variable names with placeholder values.
+
+Clearly document which integrations require credentials to work.
+
+Never invent missing credentials.
+
+5. MAKE IT INDEPENDENT OF GROK
+
+Remove any unnecessary dependency on Grok-specific runtime services, APIs or hosting.
+
+The exported project must not require the original Grok account to run.
+
+If any feature genuinely depends on a Grok service, document that dependency clearly and explain what needs to be replaced.
+
+Do not silently remove functionality to achieve independence.
+
+6. CREATE A COMPLETE README
+
+Create a detailed README.md explaining:
+
+1. What the project contains.
+2. Required Node.js version.
+3. How to install dependencies.
+4. How to run the development server.
+5. How to build the production website.
+6. How to configure environment variables.
+7. Where product information is stored.
+8. Where product photographs and other assets are stored.
+9. How to add or edit products.
+10. How to change prices.
+11. How to change website content and branding.
+12. How to deploy the project independently.
+
+Include exact terminal commands.
+
+7. VERIFY THE EXPORT
+
+Before creating the ZIP:
+
+- Inspect the complete project structure.
+- Confirm all source files are included.
+- Confirm all referenced images and assets are included.
+- Check for missing imports and broken asset paths.
+- Check for hardcoded Grok-specific dependencies.
+- Check that product data has been preserved.
+- Check that no private credentials are exposed.
+- Install dependencies and run a production build if the environment permits.
+- Report any build errors rather than claiming the project works.
+
+Do not silently fix or change the existing website during this export.
+
+8. FINAL DELIVERABLE
+
+Create:
+
+MUD_RELICS_COMPLETE_WEBSITE_EXPORT.zip
+
+Also provide:
+
+- A project folder containing the extracted source.
+- README.md.
+- A file inventory.
+- An export report listing any missing files, unresolved dependencies or known limitations.
+- Confirmation of whether the production build succeeded.
+
+Save the ZIP somewhere I can download it directly.
+
+FINAL INSTRUCTION
+
+I want ownership and portability of the entire current MUD RELICS website.
+
+Do not give me screenshots, a static HTML copy, a website description, or a partial source-code export.
+
+I need the actual working project, including its source code, assets, configurations and dependencies, packaged into one transferable ZIP.
+
+Do not deploy anything or change the live website. Only export, verify and package the existing project.
