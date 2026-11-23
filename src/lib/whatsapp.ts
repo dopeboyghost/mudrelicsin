@@ -1,13 +1,10 @@
 import { inr } from "@/data/catalog";
 
 /**
- * WhatsApp Business number for every chat button on the site.
- * International digits only: country code + number, no +, spaces, or dashes.
- * Example: 919876543210
- * This is the number from the existing MUD RELICS click-to-chat link.
- * Replace this one value to point every button at a different number.
+ * The MUD RELICS WhatsApp Business number.
+ * Digits only: country code + number, no +, spaces, or dashes.
  */
-export const WHATSAPP_NUMBER = "919895246770";
+export const WHATSAPP_NUMBER = "918714122994";
 
 const SITE = "https://mudrelics.in";
 
@@ -33,7 +30,7 @@ function titleCase(name: string) {
 export function relicEnquiryMessage(relic: { id: string; name: string; number: string; price: number | null }) {
   const name = titleCase(relic.name);
   const digits = relic.number.match(/(\d+)/)?.[1];
-  const artifact = digits ? ` (Artifact #${digits})` : "";
+  const artifact = digits ? `, Artifact #${digits}` : "";
   const price = relic.price != null ? `, priced at ${inr(relic.price)}` : "";
-  return `Hey MUD RELICS! I'm interested in ${name}${artifact}${price}. Is this relic available?\n${productPageUrl(relic.id)}`;
+  return `Hey MUD RELICS! I'm interested in ${name}${artifact}${price}. Is it available?\n${productPageUrl(relic.id)}`;
 }
