@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Band, RelicCard, Roll, SiteHeader } from "@/components/archive";
 import { Radio } from "@/components/radio";
+import { WhatsAppChatLink } from "@/components/whatsapp";
 import { relics } from "@/data/catalog";
 
 export const Route = createFileRoute("/")({ component: Home });
@@ -176,9 +177,15 @@ function Home() {
       <div className="mx-auto max-w-6xl px-4 pb-10 sm:px-6">
         <Radio />
       </div>
-      <footer className="on-swirl mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-8 sm:px-6">
-        <p className="font-mono text-xs text-muted">DBG × PARU · KOCHI</p>
-        <p className="font-mono text-xs text-gold">MUD RELICS</p>
+      <footer className="on-swirl mx-auto max-w-6xl px-4 py-8 pb-24 sm:px-6">
+        <div className="flex items-center justify-between gap-4">
+          <p className="font-mono text-xs text-muted">DBG × PARU · KOCHI</p>
+          <p className="font-mono text-xs text-gold">MUD RELICS</p>
+        </div>
+        <div className="mt-6 max-w-md border-t border-forest pt-6">
+          <p className="text-sm leading-relaxed text-fg">Found something you like? Speak directly to us on WhatsApp.</p>
+          <WhatsAppChatLink className="mt-4" />
+        </div>
       </footer>
     </div>
   );

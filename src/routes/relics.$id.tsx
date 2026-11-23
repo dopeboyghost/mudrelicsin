@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, Turner } from "@/components/archive";
+import { RelicEnquiry } from "@/components/whatsapp";
 import { inr, relicById, relics } from "@/data/catalog";
 import { useCart } from "@/lib/cart";
 import { useStock } from "@/lib/payments/use-stock";
@@ -63,6 +64,7 @@ function RelicPage() {
           ) : relic.price != null ? (
             <p className="mt-5 font-mono text-xs tracking-widest text-muted">{relic.status}</p>
           ) : null}
+          <RelicEnquiry relic={relic} />
           {relic.explain ? <p className="mt-6 max-w-md text-base leading-relaxed text-fg">{relic.explain}</p> : null}
           <dl className="mt-8 border-t border-forest font-mono text-sm">
             <Row label="Class" value={relic.category} />

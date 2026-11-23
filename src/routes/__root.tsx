@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { CartProvider } from "@/lib/cart";
 import { RadioProvider } from "@/components/radio";
+import { WhatsAppFloat } from "@/components/whatsapp";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -38,6 +39,7 @@ export const Route = createRootRoute({
           <CartProvider>
             <RadioProvider>
               <Outlet />
+              <WhatsAppFloat />
             </RadioProvider>
           </CartProvider>
         </AuthProvider>
