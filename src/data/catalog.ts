@@ -745,8 +745,7 @@ export const relics: Relic[] = [
       "/relics/sanguine-nirvana/06-top.webp",
       "/relics/sanguine-nirvana/07-side.webp",
     ],
-  },,
-
+  },
   {
     id: "030",
     number: "ARTIFACT //043",
