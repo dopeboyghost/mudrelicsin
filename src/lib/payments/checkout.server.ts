@@ -183,14 +183,28 @@ async function create(body: unknown) {
       }
       held.push(line.id);
     }
-    const Razorpay = (await import("razorpay")).default;
-    const razorpay = new Razorpay({ key_id: creds.keyId, key_secret: creds.keySecret });
-    const remote = await razorpay.orders.create({
-      amount: quoted.quote.amountPaise,
-      currency: "INR",
-      receipt: orderId.slice(0, 40),
-      notes: { mud_order: orderId },
+    // Use the Worker's native fetch runtime. The Razorpay Node SDK relies on
+    // Node HTTP APIs that can stall under Cloudflare Workers compatibility mode.
+    const razorpayResponse = await fetch("https://api.razorpay.com/v1/orders", {
+      method: "POST",
+      headers: {
+        authorization: `Basic ${btoa(`${creds.keyId}:${creds.keySecret}`)}`,
+        "content-type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        amount: quoted.quote.amountPaise,
+        currency: "INR",
+        receipt: orderId.slice(0, 40),
+        notes: { mud_order: orderId },
+      }),
+      signal: AbortSignal.timeout(15_000),
     });
+    if (!razorpayResponse.ok) {
+      throw new Error(`Razorpay order request failed (${razorpayResponse.status})`);
+    }
+    const remote = (await razorpayResponse.json()) as { id?: string };
+    if (!remote.id) throw new Error("Razorpay order response did not include an ID.");
     await sql.query(`update orders set razorpay_order_id = $2, payment_status = 'created' where id = $1`, [orderId, remote.id]);
     return json({
       orderId,
