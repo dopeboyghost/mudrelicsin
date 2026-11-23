@@ -81,7 +81,9 @@ function Home() {
               <img src="/mud-relics-logo.webp" alt="MUD RELICS" className="brand-mark h-20 w-auto sm:h-28" />
             </h1>
             <p className="mt-6 max-w-sm font-serif text-2xl leading-tight tracking-wide text-parchment uppercase sm:text-4xl">
-              You didn't buy it. You found it.
+              You didn't buy it.
+              <br />
+              You found it.
             </p>
             <a href="#roll" className="mt-6 inline-flex min-h-11 items-center bg-blood px-5 font-mono text-xs tracking-widest text-parchment">
               ENTER THE ARCHIVE
