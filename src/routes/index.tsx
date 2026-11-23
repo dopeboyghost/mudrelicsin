@@ -78,7 +78,7 @@ function Home() {
           <div className="hero-scrim absolute inset-0" />
           <div className="relative px-4 py-8 sm:px-8 sm:py-12">
             <h1>
-              <img src="/mud-relics-logo.png" alt="MUD RELICS" className="brand-mark h-20 w-auto sm:h-28" />
+              <img src="/mud-relics-logo.webp" alt="MUD RELICS" className="brand-mark h-20 w-auto sm:h-28" />
             </h1>
             <p className="mt-6 max-w-sm font-serif text-2xl leading-tight tracking-wide text-parchment uppercase sm:text-4xl">
               You didn't buy it. You found it.

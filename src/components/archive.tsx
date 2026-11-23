@@ -10,7 +10,7 @@ export function SiteHeader() {
     <header className="gold-plate sticky top-0 z-20">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-2 sm:px-6">
         <Link to="/" className="flex min-w-0 items-center">
-          <img src="/mud-relics-logo.png" alt="MUD RELICS" className="brand-mark h-11 w-auto sm:h-16" />
+          <img src="/mud-relics-logo.webp" alt="MUD RELICS" className="brand-mark h-11 w-auto sm:h-16" />
         </Link>
         <Link to="/cart" className="cart-link inline-flex min-h-11 shrink-0 items-center font-mono text-xs font-medium tracking-widest">
           CART{count > 0 ? ` · ${count}` : ""}
