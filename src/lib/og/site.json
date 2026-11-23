@@ -1,5 +1,7 @@
 {
-  "title": "MUD RELICS",
+  "title": "MUD RELICS — Handmade Artifacts",
+  "description": "You didn't buy it. You found it. Handmade artifacts, functional sculptures and collectible objects from Kochi.",
   "card": "custom",
-  "color": "0c0b09"
+  "image": "/images/mud-relics-og.jpg",
+  "color": "3A1468"
 }
