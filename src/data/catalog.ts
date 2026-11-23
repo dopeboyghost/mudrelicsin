@@ -630,12 +630,12 @@ export const relics: Relic[] = [
   },
   {
     id: "025",
-    number: "",
+    number: "ARTIFACT //038",
     name: "THE STRANGE GENTLEMAN",
     artistLabel: "DBG",
     city: "KOCHI",
     edition: "1 OF 1",
-    price: null,
+    price: 777,
     status: "AVAILABLE",
     category: "STASH JARS",
     rarity: "ONE OF ONE",
@@ -655,7 +655,7 @@ export const relics: Relic[] = [
   },
   {
     id: "026",
-    number: "",
+    number: "ARTIFACT //039",
     name: "FIERY WORM",
     artistLabel: "DBG",
     city: "KOCHI",
@@ -681,7 +681,7 @@ export const relics: Relic[] = [
   },
   {
     id: "027",
-    number: "",
+    number: "ARTIFACT //040",
     name: "CRIMSON ORACLE",
     artistLabel: "DBG",
     city: "KOCHI",
@@ -707,7 +707,7 @@ export const relics: Relic[] = [
   },
   {
     id: "028",
-    number: "",
+    number: "ARTIFACT //041",
     name: "BLUE SCARAB",
     artistLabel: "DBG",
     city: "KOCHI",
@@ -732,7 +732,7 @@ export const relics: Relic[] = [
   },
   {
     id: "029",
-    number: "ARTIFACT //034",
+    number: "ARTIFACT //042",
     name: "CRIMSON NIRVANA",
     artistLabel: "DBG",
     city: "KOCHI",
