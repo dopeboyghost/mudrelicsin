@@ -46,6 +46,38 @@
   animation: 5.5s ease-in-out infinite relic-float;
 }
 
+
+.relic-hit {
+  -webkit-tap-highlight-color: rgba(85, 232, 255, 0.28);
+}
+
+.relic-hit img {
+  transition: filter 160ms ease;
+}
+
+.relic-hit:hover img,
+.relic-hit:focus-visible img {
+  filter: brightness(1.16);
+}
+
+.relic-hit:active img {
+  filter: brightness(1.28);
+}
+
+.relic-caption {
+  -webkit-tap-highlight-color: rgba(85, 232, 255, 0.28);
+}
+
+.relic-caption:hover p,
+.relic-caption:active p,
+.relic-caption:focus-visible p,
+.relic-caption:hover p.font-mono.tracking-widest.text-gold,
+.relic-caption:active p.font-mono.tracking-widest.text-gold,
+.relic-caption:focus-visible p.font-mono.tracking-widest.text-gold {
+  color: #55e8ff;
+}
+
+
 .gold-plate {
   color: #0a0612;
   background-color: #6a2ad4;

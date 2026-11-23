@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { framesOf, inr, type Relic } from "@/data/catalog";
 import { nozzles } from "@/data/nozzles";
@@ -27,14 +27,13 @@ function wrap(angle: number) {
 }
 
 export function Roll({ relics }: { relics: Relic[] }) {
-  const navigate = useNavigate();
   const count = relics.length;
   const angle = useRef(0);
   const target = useRef(0);
   const idle = useRef(0);
-  const drag = useRef<{ x: number; a: number } | null>(null);
+  const drag = useRef<{ x: number; a: number; captured: boolean } | null>(null);
   const moved = useRef(false);
-  const nodes = useRef<(HTMLButtonElement | null)[]>([]);
+  const nodes = useRef<(HTMLAnchorElement | null)[]>([]);
   const [wide, setWide] = useState(false);
   const [caption, setCaption] = useState(0);
   const [ready, setReady] = useState(false);
@@ -70,7 +69,7 @@ export function Roll({ relics }: { relics: Relic[] }) {
         el.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${rot}deg) scale(${scale}) translate(-50%, -50%)`;
         el.style.zIndex = String(Math.round(100 - distance * 10));
         el.style.opacity = distance > 1.25 ? "0" : distance > 0.35 ? "0.8" : "1";
-        el.style.pointerEvents = distance > 0.45 ? "none" : "auto";
+        el.style.pointerEvents = distance > 1.25 ? "none" : "auto";
         if (distance < best) {
           best = distance;
           nearest = i;
@@ -112,13 +111,19 @@ export function Roll({ relics }: { relics: Relic[] }) {
         style={{ perspective: "1100px" }}
         onPointerDown={(event) => {
           moved.current = false;
-          drag.current = { x: event.clientX, a: angle.current };
-          event.currentTarget.setPointerCapture(event.pointerId);
+          drag.current = { x: event.clientX, a: angle.current, captured: false };
         }}
         onPointerMove={(event) => {
           if (!drag.current) return;
           const dx = event.clientX - drag.current.x;
-          if (Math.abs(dx) > 6) moved.current = true;
+          if (Math.abs(dx) > 6) {
+            moved.current = true;
+            if (!drag.current.captured) {
+              event.currentTarget.setPointerCapture(event.pointerId);
+              drag.current.captured = true;
+            }
+          }
+          if (!moved.current) return;
           angle.current = drag.current.a + dx * 0.28;
           target.current = angle.current;
         }}
@@ -134,16 +139,19 @@ export function Roll({ relics }: { relics: Relic[] }) {
       >
         <div className="absolute top-1/2 left-1/2 h-0 w-0" style={{ transformStyle: "preserve-3d", visibility: ready ? "visible" : "hidden" }}>
           {relics.map((relic, i) => (
-            <button
+            <Link
               key={relic.id}
-              type="button"
+              to="/relics/$id"
+              params={{ id: relic.id }}
+              aria-label={`${relic.name}${relic.number ? `, ${relic.number}` : ""}`}
               ref={(node) => {
                 nodes.current[i] = node;
               }}
-              className="absolute top-0 left-0"
+              draggable={false}
+              className="relic-hit absolute top-0 left-0"
               style={{ width: size, transformStyle: "preserve-3d" }}
-              onClick={() => {
-                if (!moved.current) navigate({ to: "/relics/$id", params: { id: relic.id } });
+              onClick={(event) => {
+                if (moved.current) event.preventDefault();
               }}
             >
               <img
@@ -153,17 +161,21 @@ export function Roll({ relics }: { relics: Relic[] }) {
                 className="relic-float aspect-[3/4] w-full object-contain"
                 style={{ animationDelay: `${i * 0.4}s` }}
               />
-            </button>
+            </Link>
           ))}
         </div>
       </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-2 text-center">
+      <Link
+        to="/relics/$id"
+        params={{ id: front.id }}
+        className="relic-caption absolute inset-x-0 bottom-2 block text-center"
+      >
         <p className="font-display text-3xl leading-none tracking-wide text-parchment sm:text-5xl">{front.name}</p>
         <p className="mt-2 font-mono text-xs tracking-widest text-gold">
           {front.number ? `${front.number} · ` : ""}
           {front.price != null ? `${inr(front.price)} · ` : ""}DRAG TO ROLL
         </p>
-      </div>
+      </Link>
     </section>
   );
 }
