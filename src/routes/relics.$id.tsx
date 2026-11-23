@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, Turner } from "@/components/archive";
 import { RelicEnquiry } from "@/components/whatsapp";
-import { inr, relicById, relics } from "@/data/catalog";
+import { byNumber, inr, relicById, relics } from "@/data/catalog";
 import { useCart } from "@/lib/cart";
 import { useStock } from "@/lib/payments/use-stock";
 
@@ -18,15 +18,19 @@ function RelicPage() {
       <main className="on-swirl mx-auto flex min-h-dvh max-w-lg flex-col justify-center px-6 text-fg">
         <p className="font-serif text-4xl text-parchment">Not in the archive</p>
         <Link to="/" className="mt-6 inline-flex min-h-11 items-center font-mono text-sm text-gold">
-          Back to the archive
+          Back home
+        </Link>
+        <Link to="/archive" className="mt-2 inline-flex min-h-11 items-center font-mono text-sm text-gold">
+          Open the archive
         </Link>
       </main>
     );
   }
 
-  const index = relics.findIndex((item) => item.id === relic.id);
-  const previous = index > 0 ? relics[index - 1] : undefined;
-  const next = index < relics.length - 1 ? relics[index + 1] : undefined;
+  const ordered = byNumber(relics);
+  const index = ordered.findIndex((item) => item.id === relic.id);
+  const previous = index > 0 ? ordered[index - 1] : undefined;
+  const next = index < ordered.length - 1 ? ordered[index + 1] : undefined;
   const held = cart.has(relic.id);
   const open = relic.status === "AVAILABLE" && !stock.blocked.has(relic.id);
 
@@ -44,6 +48,14 @@ function RelicPage() {
           ) : null}
         </div>
         <div className="on-swirl">
+          <div className="mb-5 flex flex-wrap gap-x-5 gap-y-1">
+            <Link to="/" className="inline-flex min-h-11 items-center font-mono text-xs tracking-widest text-gold">
+              ← HOME
+            </Link>
+            <Link to="/archive" className="inline-flex min-h-11 items-center font-mono text-xs tracking-widest text-gold">
+              ARCHIVE
+            </Link>
+          </div>
           {relic.number ? <p className="font-mono text-xs tracking-widest text-gold">{relic.number}</p> : null}
           <h1 className="mt-2 font-display text-5xl leading-none tracking-wide text-parchment sm:text-7xl">{relic.name}</h1>
           {relic.price != null ? <p className="mt-5 font-display text-4xl text-gold">{inr(relic.price)}</p> : null}

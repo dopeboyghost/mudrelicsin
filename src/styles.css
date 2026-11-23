@@ -46,7 +46,6 @@
   animation: 5.5s ease-in-out infinite relic-float;
 }
 
-
 .relic-hit {
   -webkit-tap-highlight-color: rgba(85, 232, 255, 0.28);
 }
@@ -76,7 +75,6 @@
 .relic-caption:focus-visible p.font-mono.tracking-widest.text-gold {
   color: #55e8ff;
 }
-
 
 .gold-plate {
   color: #0a0612;
@@ -146,6 +144,9 @@ button.text-gold {
 
 button.text-gold:hover,
 .wing-nav a:hover,
+.wing-nav a[aria-current="page"] {
+  color: #55e8ff;
+}
 a.border-gold:hover {
   color: #55e8ff;
 }
