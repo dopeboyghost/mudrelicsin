@@ -90,18 +90,146 @@
 }
 
 .gold-plate img.brand-mark,
-.brand-mark {
+.brand-mark,
+.gold-plate img.cart-word {
   filter: none;
 }
 
 .cart-link {
+  position: relative;
   color: #ffffff;
-  background-color: rgba(8, 2, 22, 0.78);
-  box-shadow: 0 0 0 0.45rem rgba(8, 2, 22, 0.78);
+  background: #000000;
+  box-shadow: 0 0 0 1px rgba(85, 232, 255, 0.5), 0 0 16px rgba(85, 232, 255, 0.28);
 }
 
 .cart-link:hover {
+  box-shadow: 0 0 0 1px #55e8ff, 0 0 22px rgba(85, 232, 255, 0.7);
+}
+
+.cart-link:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.cart-word {
+  display: block;
+  height: 1.9rem;
+  width: auto;
+}
+
+.cart-count {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.45rem;
+  display: grid;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  place-items: center;
+  padding: 0 0.2rem;
+  background: #55e8ff;
+  color: #000000;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.cart-sheet {
+  background: #000000;
+}
+
+.cart-mark {
+  display: block;
+  width: min(100%, 22rem);
+  height: auto;
+}
+
+.cart-held {
   color: #55e8ff;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 0.8;
+  text-shadow: 0 0 16px rgba(85, 232, 255, 0.45);
+}
+
+.cart-lines {
+  border-color: rgba(85, 232, 255, 0.35);
+}
+
+.cart-lines > li + li,
+.cart-lines {
+  border-color: rgba(85, 232, 255, 0.35);
+}
+
+.cart-remove {
+  color: #55e8ff;
+}
+
+.cart-remove:hover {
+  color: #ffffff;
+}
+
+.cart-checkout {
+  background: #000000;
+  color: #f2e9ff;
+  box-shadow: 0 0 0 1px #55e8ff, 0 0 18px rgba(85, 232, 255, 0.35);
+}
+
+.cart-checkout:hover {
+  background: #55e8ff;
+  color: #000000;
+}
+
+.cart-checkout:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 640px) {
+  .cart-word {
+    height: 2.35rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    cursor: url("/cursor/star.png") 18 18, auto;
+  }
+
+  a,
+  button,
+  summary,
+  label,
+  [role="button"],
+  .relic-hit {
+    cursor: url("/cursor/star.png") 18 18, pointer;
+  }
+
+  a:hover,
+  button:hover,
+  summary:hover,
+  label:hover,
+  [role="button"]:hover,
+  .relic-hit:hover {
+    cursor: url("/cursor/star-hover.png") 18 18, pointer;
+  }
+
+  input,
+  textarea,
+  select,
+  option {
+    cursor: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cart-link,
+  .cart-checkout {
+    transition: none;
+  }
+
+  .cart-link:active,
+  .cart-checkout:active {
+    transform: none;
+  }
 }
 
 .whatsapp-float {

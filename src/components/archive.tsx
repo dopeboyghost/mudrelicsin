@@ -16,8 +16,9 @@ export function SiteHeader() {
           <Link to="/archive" className="inline-flex min-h-11 items-center px-2 font-mono text-xs font-medium tracking-widest">
             ARCHIVE
           </Link>
-          <Link to="/cart" className="cart-link inline-flex min-h-11 items-center px-2 font-mono text-xs font-medium tracking-widest">
-            CART{count > 0 ? ` · ${count}` : ""}
+          <Link to="/cart" className="cart-link" aria-label={count > 0 ? `Cart, ${count}` : "Cart"}>
+            <img src="/brand/cart-word.webp" alt="" className="cart-word" />
+            <span className="cart-count">{count}</span>
           </Link>
         </nav>
       </div>
