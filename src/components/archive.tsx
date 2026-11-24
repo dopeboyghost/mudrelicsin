@@ -12,12 +12,12 @@ export function SiteHeader() {
         <Link to="/" className="flex min-w-0 items-center">
           <img src="/mud-relics-logo.webp" alt="MUD RELICS" className="brand-mark h-11 w-auto sm:h-16" />
         </Link>
-        <nav className="flex shrink-0 items-center gap-1 sm:gap-3">
-          <Link to="/archive" className="inline-flex min-h-11 items-center px-2 font-mono text-xs font-medium tracking-widest">
-            ARCHIVE
+        <nav className="flex shrink-0 items-center gap-2 sm:gap-4">
+          <Link to="/archive" className="nav-mark" aria-label="Archive">
+            <img src="/brand/archive-word.webp" alt="ARCHIVE" className="nav-word" />
           </Link>
-          <Link to="/cart" className="cart-link" aria-label={count > 0 ? `Cart, ${count}` : "Cart"}>
-            <img src="/brand/cart-word.webp" alt="" className="cart-word" />
+          <Link to="/cart" className="nav-mark cart-link" aria-label={count > 0 ? `Cart, ${count}` : "Cart"}>
+            <img src="/brand/cart-word.webp" alt="" className="nav-word cart-word" />
             <span className="cart-count">{count}</span>
           </Link>
         </nav>

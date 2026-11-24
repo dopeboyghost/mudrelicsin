@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, Turner } from "@/components/archive";
 import { RelicEnquiry } from "@/components/whatsapp";
-import { byNumber, inr, relicById, relics } from "@/data/catalog";
+import { byNumber, inr, relicById, relics, type Relic } from "@/data/catalog";
+import { recordFor } from "@/data/records";
 import { useCart } from "@/lib/cart";
 import { useStock } from "@/lib/payments/use-stock";
 
@@ -87,12 +88,6 @@ function RelicPage() {
             <Row label="Availability" value={open ? "Available" : relic.status === "SOLD" ? "Sold" : "Held"} />
             <Row label="Made by" value={`${relic.artistLabel} · ${relic.city}`} />
           </dl>
-          {relic.lore ? (
-            <div className="mt-8 border border-forest bg-surface p-4">
-              <p className="font-mono text-xs tracking-widest text-gold">ARCHIVE NOTE</p>
-              <p className="mt-3 text-sm leading-relaxed text-fg">{relic.lore}</p>
-            </div>
-          ) : null}
           <div className="mt-8 grid grid-cols-2 gap-3">
             {previous ? (
               <Link to="/relics/$id" params={{ id: previous.id }} className="min-h-11 border border-forest px-3 py-3">
@@ -111,6 +106,45 @@ function RelicPage() {
           </div>
         </div>
       </main>
+      <ArtifactRecord relic={relic} />
+    </div>
+  );
+}
+
+function ArtifactRecord({ relic }: { relic: Relic }) {
+  const record = recordFor(relic.number, relic.name);
+  if (!record) return null;
+
+  return (
+    <section className="mx-auto max-w-5xl px-4 pb-16 sm:px-6">
+      <article className="border border-forest bg-black px-5 py-6 sm:px-8 sm:py-10">
+        <header className="border-b border-forest pb-5">
+          <p className="font-mono text-xs tracking-[0.22em] text-gold">ARTIFACT RECORD</p>
+          <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <h2 className="font-display text-3xl leading-none tracking-wide text-parchment sm:text-4xl">{relic.name}</h2>
+            <p className="font-mono text-xs tracking-widest text-gold">{relic.number}</p>
+          </div>
+        </header>
+        <dl className="mt-6 max-w-3xl space-y-6">
+          <Field label="Classification" value={record.classification} />
+          <Field label="Origin" value={record.origin} />
+          <Field label="The Account" value={record.account} />
+          <Field label="Known Properties" value={record.properties} />
+          <div className="border-t border-forest pt-5">
+            <dt className="font-mono text-xs tracking-widest text-gold">Archive Note</dt>
+            <dd className="mt-3 font-serif text-lg leading-relaxed text-parchment">{record.note}</dd>
+          </div>
+        </dl>
+      </article>
+    </section>
+  );
+}
+
+function Field({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="font-mono text-xs tracking-widest text-gold">{label}</dt>
+      <dd className="mt-2 text-base leading-relaxed text-fg">{value}</dd>
     </div>
   );
 }
